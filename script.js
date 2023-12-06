@@ -35,7 +35,47 @@ fetch("http://localhost:3000/robots")
             <h3>${element.name}</h3>
             <p>${element.description}</p>
             <button><a href="./details.html?id=${element.id}">View Details</a></button>
+            <button onclick="deleteRobot(${element.id})">Delete</button>
         </div>
     </div>`
     });
+})
+
+function deleteRobot(id){
+    axios.delete(`http://localhost:3000/robots/${id}`);
+    window.location.reload();
+}
+
+let icon = document.querySelector("#i");
+let modal = document.querySelector(".modal");
+let click = document.querySelector(".i");
+let down = document.querySelector("#down");
+let dropdown = document.querySelectorAll('.dropdown');
+
+icon.addEventListener("click", ()=>{
+    modal.style.display = "flex";
+})
+
+click.addEventListener("click", ()=>{
+    modal.style.display = "";
+})
+
+modal.addEventListener("click", (e)=>{
+    if(e.target == modal){
+        modal.style.display = "";
+    }
+})
+
+down.addEventListener("click", ()=>{
+    dropdown.style.display = "block";
+})
+
+let storm = document.querySelector(".storm");
+
+storm.addEventListener("click", ()=>{
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
 })
