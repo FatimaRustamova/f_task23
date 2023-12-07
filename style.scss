@@ -190,7 +190,7 @@ header{
 
 .section1{
     width: 100%;
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     .container{
         @include container;
         .robot{
@@ -217,6 +217,7 @@ header{
         .divs{
             @include flex;
             margin-top: 80px;
+            flex-wrap: wrap;
             .crab{
                 width: 23%;
                 box-shadow: 0px 10px 30px 0px rgba(212, 150, 255, 0.4);
@@ -851,6 +852,74 @@ footer{
                 cursor: pointer;
             }
         }
+    }
+}
+
+.update{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    @include center;
+    display: none;
+    .up{
+        width: 400px;
+        padding: 30px 0;
+        border-radius: 15px;
+        @include center;
+        margin-top: 70px;
+        background-color: bisque;
+        position: relative;
+        #sub{
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            label{
+                font-family: $font-family2;
+            }
+            input[type=text]{
+                width: 100%;
+                height: 30px;
+                border: none;
+            }
+            input[type=submit]{
+                width: 100%;
+                height: 40px;
+                color: $color2;
+                font-family: $font-family1;
+                background-color: seagreen;
+                margin-top: 20px;
+                font-size: 18px;
+                border: 1px solid seagreen;
+                cursor: pointer;
+            }
+        }
+        #icon2{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.load{
+    width: 100%;
+    @include center;
+    flex-direction: column;
+    #load{
+        width: 150px;
+        height: 40px;
+        border: 1px solid $color1;
+        background-color: $color1;
+        color: $color2;
+        font-family: $font-family2;
+        font-size: 16px;
+        cursor: pointer;
     }
 }
 
